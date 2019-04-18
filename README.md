@@ -8,8 +8,9 @@
 #### geoserver
 
 ### Installation:
-Nécessite Docker (voir Docker For Windows ou Docker Toolbox sur Windows ou https://get.docker.com/ pour Linux)
-Nécessite aussi docker-compose
+- Nécessite Docker https://www.docker.com/ 
+- Voir Docker For Windows ou Docker Toolbox pour Windows ou https://get.docker.com/ pour Linux
+- Nécessite aussi le CLI docker-compose
 
 ### Lancer l'environnment:
 - docker-compose build
