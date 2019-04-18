@@ -2,7 +2,7 @@
 
 ## Exemple d'un environnement de développement docker pour SIG OpenSource
 
-#### Postgresql/Poostgis
+#### Postgresql/Postgis
 #### PHP
 #### Nginx
 #### geoserver
