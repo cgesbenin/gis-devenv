@@ -32,7 +32,7 @@ services:
     env_file:
       - ./docker/postgis/postgis.env
   geoserver:
-    image: kartoza/geoserver:2.15.0
+    image: kartoza/geoserver
     volumes:
       - geoserver-data:/opt/geoserver/data_dir
     ports:
