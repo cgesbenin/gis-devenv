@@ -1,0 +1,41 @@
+version: "3.7"
+volumes:
+  postgis_data:
+  geoserver-data:
+services:
+  php-fpm:
+    build:
+      context: ./docker/php
+      dockerfile: ./php.dockerfile
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
+      - ./docker/php/php-www.conf:/usr/local/etc/php-fpm.d/www.conf
+  nginx:
+    build:
+      context: ./docker/nginx
+      dockerfile: nginx.dockerfile
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    ports:
+      - 80:80
+  postgis:
+    build:
+      context: ./docker/postgis
+      dockerfile: ./postgis.dockerfile
+    volumes:
+      - postgis_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    env_file:
+      - ./docker/postgis/postgis.env
+  geoserver:
+    image: kartoza/geoserver:2.15.0
+    volumes:
+      - geoserver-data:/opt/geoserver/data_dir
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./docker/geoserver/geoserver.env
