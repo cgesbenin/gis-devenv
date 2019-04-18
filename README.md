@@ -12,5 +12,5 @@ Nécessite Docker (voir Docker For Windows ou Docker Toolbox sur Windows ou http
 Nécessite aussi docker-compose
 
 ### Lancer l'environnment:
-docker-compose build
-docker-compose up
+- docker-compose build
+- docker-compose up
