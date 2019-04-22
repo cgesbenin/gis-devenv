@@ -17,5 +17,5 @@
 - docker-compose up
 
 ### SSL:
-- Ajouter 127.0.0.1   demo.local au fichier host
+- Ajouter "127.0.0.1 demo.local" au fichier host
 - Ajouter docker/nginx/rootCA.pem à la liste des CA de confiance du navigateur
