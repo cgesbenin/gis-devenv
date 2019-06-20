@@ -43,7 +43,9 @@ services:
     networks:
       - backend
   geoserver:
-    image: kartoza/geoserver
+    build: 
+      context: ./docker/geoserver
+      dockerfile: ./geoserver.dockerfile
     volumes:
       - geoserver-data:/opt/geoserver/data_dir
     ports:
